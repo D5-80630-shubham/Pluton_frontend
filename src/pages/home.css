@@ -1,0 +1,21 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center; /* Center text */
+  }
+
+.image-container {
+  margin-right: 20px;
+}
+
+.image-container img {
+  width: 100%;
+  height: 200px;
+}
+
+.image-container p {
+  margin-top: 10px;
+  color: #555;
+}
