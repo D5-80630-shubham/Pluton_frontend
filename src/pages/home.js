@@ -34,15 +34,15 @@ function HomePage() {
         <div style={divStyle}>
           <div className="image-container">
             <img src={img1} alt="Notes" />
-            <p>Pluton bank</p>
+            <p style={{ color: "orange" }}>Pluton bank</p>
           </div>
           <div className="image-container">
             <img src={img2} alt="Digital Bank on Mobile" />
-            <p>Pluton bank</p>
+            <p style={{ color: "orange" }}>Pluton bank</p>
           </div>
           <div className="image-container">
             <img src={img3} alt="Digital Bank on Mobile" />
-            <p>Pluton bank</p>
+            <p style={{ color: "orange" }}>Pluton bank</p>
           </div>
         </div>
 
@@ -74,11 +74,11 @@ function HomePage() {
         <div style={divStyle}>
           <div className="image-container">
             <img src={img4} alt="Bank with Notes and Coin" />
-            <p>Pluton bank</p>
+            <p style={{ color: "orange" }}>Pluton bank</p>
           </div>
           <div className="image-container">
             <img src={img5} alt="Hand Holding Monitor" />
-            <p>Pluton bank</p>
+            <p style={{ color: "orange" }}>Pluton bank</p>
           </div>
         </div>
 
@@ -110,19 +110,51 @@ function HomePage() {
         <div style={divStyle}>
           <div className="image-container">
             <img src={img6} alt="Bank with Notes and Coin" />
-            <p>Pluton bank</p>
+            <p style={{ color: "orange" }}>
+              Pluton bank Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Sequi reprehenderit consequuntur consequatur quasi, neque
+              voluptatem perferendis omnis vitae blanditiis aliquam, delectus
+              quisquam non nam consectetur officia amet obcaecati magnam rem
+              necessitatibus recusandae cum voluptate dolores? Debitis aliquid
+              quo ea at quam sint, nesciunt explicabo dicta vero ipsa,
+              voluptates veritatis fugiat.
+            </p>
           </div>
           <div className="image-container">
             <img src={img7} alt="Hand Holding Monitor" />
-            <p>Pluton bank</p>
+            <p style={{ color: "orange" }}>
+              Pluton bank Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Sequi reprehenderit consequuntur consequatur quasi, neque
+              voluptatem perferendis omnis vitae blanditiis aliquam, delectus
+              quisquam non nam consectetur officia amet obcaecati magnam rem
+              necessitatibus recusandae cum voluptate dolores? Debitis aliquid
+              quo ea at quam sint, nesciunt explicabo dicta vero ipsa,
+              voluptates veritatis fugiat.
+            </p>
           </div>
           <div className="image-container">
             <img src={img8} alt="Hand Holding Monitor" />
-            <p>Pluton bank</p>
+            <p style={{ color: "orange" }}>
+              Pluton bank Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Sequi reprehenderit consequuntur consequatur quasi, neque
+              voluptatem perferendis omnis vitae blanditiis aliquam, delectus
+              quisquam non nam consectetur officia amet obcaecati magnam rem
+              necessitatibus recusandae cum voluptate dolores? Debitis aliquid
+              quo ea at quam sint, nesciunt explicabo dicta vero ipsa,
+              voluptates veritatis fugiat.
+            </p>
           </div>
           <div className="image-container">
             <img src={img9} alt="Hand Holding Monitor" />
-            <p>Pluton bank</p>
+            <p style={{ color: "orange" }}>
+              Pluton bank Lorem ipsum dolor sit amet consectetur adipisicing
+              elit. Sequi reprehenderit consequuntur consequatur quasi, neque
+              voluptatem perferendis omnis vitae blanditiis aliquam, delectus
+              quisquam non nam consectetur officia amet obcaecati magnam rem
+              necessitatibus recusandae cum voluptate dolores? Debitis aliquid
+              quo ea at quam sint, nesciunt explicabo dicta vero ipsa,
+              voluptates veritatis fugiat.
+            </p>
           </div>
         </div>
 

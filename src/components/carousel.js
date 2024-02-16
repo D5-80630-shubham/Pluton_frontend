@@ -2,7 +2,9 @@ import React from "react";
 import { Carousel } from "react-bootstrap";
 import img1 from "../assets/carousel_image/Home.png";
 import img2 from "../assets/carousel_image/Home1.png";
-import img3 from "../assets/carousel_image/Home.png";
+import img3 from "../assets/carousel_image/Home2.png";
+import img4 from "../assets/carousel_image/Home3.png";
+
 
 function CarouselComponent() {
   return (
@@ -18,14 +20,21 @@ function CarouselComponent() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img className="d-block w-100" src={img2} alt="Second slide" />
+        <img className="d-block w-100" src={img3} alt="Second slide" />
         <Carousel.Caption>
           <h3>Investements are good</h3>
           <p>Apne Sapne Mein Invest Karo</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img className="d-block w-100" src={img3} alt="Third slide" />
+        <img className="d-block w-100" src={img2} alt="Third slide" />
+        <Carousel.Caption>
+          <h3>Notice to Safe Deposit Locker Holders |</h3>
+          <p>Grab exciting offers on PLUTON Bank Debit and Credit Cards</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img className="d-block w-100" src={img4} alt="Third slide" />
         <Carousel.Caption>
           <h3>Notice to Safe Deposit Locker Holders |</h3>
           <p>Grab exciting offers on PLUTON Bank Debit and Credit Cards</p>
