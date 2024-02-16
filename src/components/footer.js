@@ -10,7 +10,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-light py-4">
+    <footer id="contact" className="bg-dark text-light py-4">
       <Container>
         <Row>
 
@@ -46,17 +46,17 @@ const Footer = () => {
             <h5>Follow Us</h5>
             <ul className="list-inline">
               <li className="list-inline-item">
-                <a href="#">
+                <a href="#home">
                   <FontAwesomeIcon icon={faFacebook} />
                 </a>
               </li>
               <li className="list-inline-item">
-                <a href="#">
+                <a href="#home">
                   <FontAwesomeIcon icon={faTwitter} />
                 </a>
               </li>
               <li className="list-inline-item">
-                <a href="#">
+                <a href="#home">
                   <FontAwesomeIcon icon={faLinkedin} />
                 </a>
               </li>

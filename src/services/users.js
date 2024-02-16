@@ -29,3 +29,20 @@ export async function signinUser(email,password){
         return createError(ex)
     }
 }
+
+export async function fetchUserProfile() {
+    try {
+      const authToken = sessionStorage.getItem("token");
+      const url = createUrl('user/profile');
+      
+      const response = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${authToken}`,
+        },
+      });
+
+      return response.data;
+    } catch (error) {
+        return createError(error)
+    }
+}

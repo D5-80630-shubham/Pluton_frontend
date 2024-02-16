@@ -6,6 +6,7 @@ import img3 from "../assets/carousel_image/Home.png";
 
 function CarouselComponent() {
   return (
+    <div id="home">
     <Carousel wrap={true} interval={1500}>
       <Carousel.Item>
         <img className="d-block w-100" src={img1} alt="First slide" />
@@ -31,6 +32,7 @@ function CarouselComponent() {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+    </div>
   );
 }
 

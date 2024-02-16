@@ -20,9 +20,9 @@ export function Signup() {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
     
-    if (firstName.length == 0) {
+    if (firstName.length === 0) {
       toast.warn("Enter first name");
-    } else if (lastName.length == 0) {
+    } else if (lastName.length === 0) {
       toast.warn("Enter last name");
     } else if (!emailRegex.test(email)) {
       toast.warn("Enter email");
@@ -30,7 +30,7 @@ export function Signup() {
       toast.warn('Password must be of at least 8 characters');
     } else if (!passwordRegex.test(password)) {
       toast.warn('password must contain at least one uppercase letter, one lowercase letter, and one number')
-    } else if (phoneNumber.length == 0) {
+    } else if (phoneNumber.length === 0) {
       toast.warn("Enter mobile number");
     } else if (gender === "") {
       toast.warn("Select your gender");

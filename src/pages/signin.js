@@ -22,15 +22,21 @@ export function Signin() {
         "password must contain at least one uppercase letter, one lowercase letter, and one number"
       );
     } else {
-      // make the api call
+
       const result = await signinUser(email, password);
       if (result["status"] === "success") {
-        // cache the token
+
         const token = result["data"]["token"];
         sessionStorage["token"] = token;
 
-        toast.success("Welcome to the pizza shop");
-        navigate("/user");
+        toast.success("logged in successfully");
+        
+        if(result.user.role==='ADMIN'){
+          navigate("/admin");
+        }else if(result.user.role==='CUSTOMER'){
+          navigate("/user");
+        }
+        
       } else {
         toast.error(result["error"]);
       }

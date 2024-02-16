@@ -11,7 +11,6 @@ import img6 from "../assets/small_image/cardswipmachine.jpg";
 import img7 from "../assets/small_image/shopingCart.jpg";
 import img8 from "../assets/small_image/wallet.jpg";
 import img9 from "../assets/small_image/messageIcon.jpg";
-import img10 from "../assets/small_image/simpleWallet.jpg";
 
 import Footer from "../components/footer";
 
@@ -24,7 +23,7 @@ function HomePage() {
     <div>
       <NavbarComponent />
       <CarouselComponent />
-      <div className="container home">
+      <div id="about" className="container home">
         <div>
           <h2>In the World of penny pinching</h2>
           <p>
@@ -35,15 +34,15 @@ function HomePage() {
         <div style={divStyle}>
           <div className="image-container">
             <img src={img1} alt="Notes" />
-            <p>Text below image 1</p>
+            <p>Pluton bank</p>
           </div>
           <div className="image-container">
             <img src={img2} alt="Digital Bank on Mobile" />
-            <p>Text below image 2</p>
+            <p>Pluton bank</p>
           </div>
           <div className="image-container">
             <img src={img3} alt="Digital Bank on Mobile" />
-            <p>Text below image 2</p>
+            <p>Pluton bank</p>
           </div>
         </div>
 
@@ -75,11 +74,11 @@ function HomePage() {
         <div style={divStyle}>
           <div className="image-container">
             <img src={img4} alt="Bank with Notes and Coin" />
-            <p>Text below image 3</p>
+            <p>Pluton bank</p>
           </div>
           <div className="image-container">
             <img src={img5} alt="Hand Holding Monitor" />
-            <p>Text below image 4</p>
+            <p>Pluton bank</p>
           </div>
         </div>
 
@@ -111,19 +110,19 @@ function HomePage() {
         <div style={divStyle}>
           <div className="image-container">
             <img src={img6} alt="Bank with Notes and Coin" />
-            <p>Text below image 3</p>
+            <p>Pluton bank</p>
           </div>
           <div className="image-container">
             <img src={img7} alt="Hand Holding Monitor" />
-            <p>Text below image 4</p>
+            <p>Pluton bank</p>
           </div>
           <div className="image-container">
             <img src={img8} alt="Hand Holding Monitor" />
-            <p>Text below image 4</p>
+            <p>Pluton bank</p>
           </div>
           <div className="image-container">
             <img src={img9} alt="Hand Holding Monitor" />
-            <p>Text below image 4</p>
+            <p>Pluton bank</p>
           </div>
         </div>
 
