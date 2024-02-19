@@ -15,28 +15,25 @@ export function Signin() {
 
     if (!emailRegex.test(email)) {
       toast.warn("Invalid email format");
-    } else if (password.length< 8) {
+    } else if (password.length < 8) {
       toast.warn("Password must be of at least 8 characters");
     } else if (!passwordRegex.test(password)) {
       toast.warn(
         "password must contain at least one uppercase letter, one lowercase letter, and one number"
       );
     } else {
-
       const result = await signinUser(email, password);
-      if (result["status"] === "success") {
+      const user = result.data.user;
+      const jwt = result.data.jwt;
+      if (user !== null && jwt !== null) {
+        sessionStorage.setItem("token", "Bearer " + jwt);
+        sessionStorage.setItem("userid", user.customerId);
+        sessionStorage.setItem("role", user.role);
+        console.log(user);
 
-        const token = result["data"]["token"];
-        sessionStorage["token"] = token;
+        toast.success("Successfully logged in");
 
-        toast.success("logged in successfully");
-        
-        if(result.user.role==='ADMIN'){
-          navigate("/admin");
-        }else if(result.user.role==='CUSTOMER'){
-          navigate("/user");
-        }
-        
+        navigate("/");
       } else {
         toast.error(result["error"]);
       }

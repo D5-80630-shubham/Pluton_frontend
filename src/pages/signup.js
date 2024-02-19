@@ -12,24 +12,24 @@ export function Signup() {
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
-
   const navigate = useNavigate();
 
   const onSignUp = async () => {
-  
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
-    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+
     if (firstName.length === 0) {
       toast.warn("Enter first name");
     } else if (lastName.length === 0) {
       toast.warn("Enter last name");
     } else if (!emailRegex.test(email)) {
       toast.warn("Enter email");
-    }  else if(password.length<8){
-      toast.warn('Password must be of at least 8 characters');
+    } else if (password.length < 8) {
+      toast.warn("Password must be of at least 8 characters");
     } else if (!passwordRegex.test(password)) {
-      toast.warn('password must contain at least one uppercase letter, one lowercase letter, and one number')
+      toast.warn(
+        "password must contain at least one uppercase letter, one lowercase letter, and one number"
+      );
     } else if (phoneNumber.length === 0) {
       toast.warn("Enter mobile number");
     } else if (gender === "") {
@@ -37,28 +37,24 @@ export function Signup() {
     } else if (!dateOfBirth) {
       toast.warn("Enter your date of birth");
     } else {
- 
-      
-        const result = await signupUser(
-          firstName,
-          lastName,
-          email,
-          password,
-          gender,
-          dateOfBirth,
-          phoneNumber
-        );
+      const result = await signupUser(
+        firstName,
+        lastName,
+        email,
+        password,
+        gender,
+        dateOfBirth,
+        phoneNumber
+      );
 
-       
-        if (result && result.customerId) {
-            toast.success("Successfully Registered");
-            navigate("/");
-          } else if (result && result.error) {
-            toast.error(result.error.message); 
-          } else {
-            toast.error("Unknown error occurred. Please try again later.");
-          }
-      
+      if (result && result.customerId) {
+        toast.success("Successfully Registered");
+        navigate("/signin");
+      } else if (result && result.error) {
+        toast.error(result.error.message);
+      } else {
+        toast.error("Unknown error occurred. Please try again later.");
+      }
     }
   };
 
@@ -125,7 +121,10 @@ export function Signup() {
                 type="date"
                 className="form-control"
                 name="dateOfBirth"
-                onChange={(e) => setDateOfBirth(e.target.value)}
+                onChange={(e) => {
+                  const selectedDate = new Date(e.target.value);
+                  setDateOfBirth(selectedDate);
+                }}
               />
             </div>
             <div className="mb-3">

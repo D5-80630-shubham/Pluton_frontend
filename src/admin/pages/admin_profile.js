@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
 import loading from '../../assets/loading screen/loading_gif.gif'
-import { fetchUserProfile } from "../services/userService";
+import { fetchAdminProfile} from '../services/adminServices'
 import {
   Typography,
   Paper,
@@ -26,8 +26,8 @@ const typographySX = {
   width: "150px",
 }
 
-const UserProfile = () => {
-  const [userProfile, setUserProfile] = useState(null);
+const AdminProfile = () => {
+  const [adminProfile, setAdminProfile] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -36,8 +36,8 @@ const UserProfile = () => {
 
     const fetchData = async () => {
       try {
-        const userData = await fetchUserProfile(id, token);
-        setUserProfile(userData);
+        const userData = await fetchAdminProfile(id, token);
+        setAdminProfile(userData);
         setIsLoading(false);
       } catch (error) {
         console.error('Error fetching user profile:', error);
@@ -54,7 +54,7 @@ const UserProfile = () => {
     </div>;
   }
 
-  if (!userProfile) {
+  if (!adminProfile) {
     return <div>Error: Unable to fetch user profile.</div>;
   }
 
@@ -65,7 +65,7 @@ const UserProfile = () => {
     <Container maxWidth="md" sx={{ mt: 4 }}>
       <Paper elevation={3} sx={{ padding: 4 }}>
         <Typography variant="h4" gutterBottom>
-          Account Details
+          Bank Manager Details
         </Typography>
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -78,7 +78,7 @@ const UserProfile = () => {
                 variant="h6"
                 sx={{ fontWeight: "bold", marginBottom: "10px" }}
               >
-                Account Information
+                Manager Information
               </Typography>
               <div>
                 <Typography
@@ -92,7 +92,7 @@ const UserProfile = () => {
                   square
                   style={{...paperStyle}}
                 >
-                  {userProfile.customerId}
+                  {adminProfile.customerId}
                 </Paper>
               </div>
               <div>
@@ -100,14 +100,14 @@ const UserProfile = () => {
                   variant="subtitle1"
                   sx={{...typographySX}}
                 >
-                  Date of Birth:
+                  Gender:
                 </Typography>
                 <Paper
                   elevation={0}
                   square
                   style={{...paperStyle}}
                 >
-                  {userProfile.dateOfBirth}
+                  {adminProfile.gender}
                 </Paper>
               </div>
               <div>
@@ -115,14 +115,29 @@ const UserProfile = () => {
                   variant="subtitle1"
                   sx={{...typographySX}}
                 >
-                  UPI Number:
+                  Account Type:
                 </Typography>
                 <Paper
                   elevation={0}
                   square
                   style={{...paperStyle}}
                 >
-                  {userProfile.phoneNumber}
+                  {adminProfile.dateOfBirth}
+                </Paper>
+              </div>
+              <div>
+                <Typography
+                  variant="subtitle1"
+                  sx={{...typographySX}}
+                >
+                  Credit Limit:
+                </Typography>
+                <Paper
+                  elevation={0}
+                  square
+                  style={{...paperStyle}}
+                >
+                  {adminProfile.phoneNumber}
                 </Paper>
               </div>
             </Paper>
@@ -151,7 +166,7 @@ const UserProfile = () => {
                   square
                   style={{...paperStyle }}
                 >
-                  {userProfile.firstName}
+                  {adminProfile.firstName}
                 </Paper>
               </div>
               <div>
@@ -166,7 +181,7 @@ const UserProfile = () => {
                   square
                   style={{...paperStyle}}
                 >
-                  {userProfile.lastName}
+                  {adminProfile.lastName}
                 </Paper>
               </div>
               <div>
@@ -181,22 +196,7 @@ const UserProfile = () => {
                   square
                   style={{...paperStyle}}
                 >
-                  {userProfile.email}
-                </Paper>
-              </div>
-              <div>
-                <Typography
-                  variant="subtitle1"
-                  sx={{...typographySX}}
-                >
-                  Gender:
-                </Typography>
-                <Paper
-                  elevation={0}
-                  square
-                  style={{...paperStyle}}
-                >
-                  {userProfile.gender}
+                  {adminProfile.email}
                 </Paper>
               </div>
             </Paper>
@@ -220,5 +220,5 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile;
+export default AdminProfile;
 

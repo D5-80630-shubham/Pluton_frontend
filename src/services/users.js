@@ -2,11 +2,23 @@ import axios from "axios";
 import { createError, createUrl } from "./utils";
 
 
-export async function signupUser(){
+export async function signupUser(firstName,
+    lastName,
+    email,
+    password,
+    gender,
+    dateOfBirth,
+    phoneNumber){
     try{
-        const url = createUrl('user/signup')
+        const url = createUrl('user/register')
         const body = {
-
+        firstName,
+        lastName,
+        email,
+        password,
+        gender,
+        dateOfBirth,
+        phoneNumber
         }
         const response = await axios.post(url,body)
         return response.data
@@ -24,25 +36,9 @@ export async function signinUser(email,password){
             password,
         }
         const response = await axios.post(url,body)
-        return response.data
+        return response;
     }catch(ex){
         return createError(ex)
     }
 }
 
-export async function fetchUserProfile() {
-    try {
-      const authToken = sessionStorage.getItem("token");
-      const url = createUrl('user/profile');
-      
-      const response = await axios.get(url, {
-        headers: {
-          Authorization: `Bearer ${authToken}`,
-        },
-      });
-
-      return response.data;
-    } catch (error) {
-        return createError(error)
-    }
-}

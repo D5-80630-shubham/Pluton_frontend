@@ -22,6 +22,8 @@ function HomePage() {
   return (
     <div>
       <NavbarComponent />
+      <br></br>
+      <br></br>
       <CarouselComponent />
       <div id="about" className="container home">
         <div>
