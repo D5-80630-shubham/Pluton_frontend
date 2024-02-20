@@ -1,35 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {loanOptions } from "../assets/loanOptions";
+import Footer from "../components/footer";
+import NavbarComponent from "../components/navbar";
 
 function Loan() {
-  const loanOptions = [
-    {
-      id: 1,
-      name: "Personal Loan",
-      description: "Get a loan for personal use.",
-      rate: "14%",
-    },
-    {
-      id: 2,
-      name: "Home Loan",
-      description: "Finance your dream home.",
-      rate: "11%",
-    },
-    {
-      id: 3,
-      name: "Car Loan",
-      description: "Get a loan to buy your dream car.",
-      rate: "10.5%",
-    },
-    {
-      id: 4,
-      name: "Education Loan",
-      description: "Fund your education with ease.",
-      rate: "9.1%",
-    },
-  ];
+
+
+
 
   return (
+    <>
+    <NavbarComponent/>
+    <br></br>
+    <br></br>
     <div className="container">
       <h2>Loan Options</h2>
       <table className="table table-responsive">
@@ -47,12 +31,14 @@ function Loan() {
               <td>{option.name}</td>
               <td>{option.description}</td>
               <td>{option.rate}</td>
-              <td><button className="btn btn-primary">Appky</button></td>
+              <td><Link to={"/loan/apply"} className="btn btn-primary">Apply</Link></td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
+    <Footer/>
+    </>
   );
 }
 

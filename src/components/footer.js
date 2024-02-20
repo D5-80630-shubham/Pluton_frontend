@@ -13,7 +13,6 @@ const Footer = () => {
     <footer id="contact" className="bg-dark text-light py-4">
       <Container>
         <Row>
-
           <Col md={3} className="mb-3 mb-md-0">
             <h5>Quick Links</h5>
             <ul className="list-unstyled">

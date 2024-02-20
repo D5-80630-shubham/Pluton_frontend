@@ -13,24 +13,24 @@ function CarouselComponent() {
       <Carousel.Item>
         <img className="d-block w-100" src={img1} alt="First slide" />
         <Carousel.Caption>
-          <h3>Pluton E-Banking</h3>
+          {/* <h3>Pluton E-Banking</h3>
           <p>
             Experience the best with UPI on your PLUTON Bank RuPay Credit Card.
-          </p>
+          </p> */}
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img className="d-block w-100" src={img3} alt="Second slide" />
         <Carousel.Caption>
-          <h3>Investements are good</h3>
-          <p>Apne Sapne Mein Invest Karo</p>
+          {/* <h3>Investements are good</h3>
+          <p>Apne Sapne Mein Invest Karo</p> */}
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img className="d-block w-100" src={img2} alt="Third slide" />
         <Carousel.Caption>
-          <h3>Notice to Safe Deposit Locker Holders |</h3>
-          <p>Grab exciting offers on PLUTON Bank Debit and Credit Cards</p>
+          {/* <h3>Notice to Safe Deposit Locker Holders |</h3>
+          <p>Grab exciting offers on PLUTON Bank Debit and Credit Cards</p> */}
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>

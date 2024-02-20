@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, {useState ,useEffect} from "react";
 import { useTheme } from "@mui/material/styles";
 import {
   LineChart,
@@ -9,25 +9,35 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import Title from "./Title";
-import axios from 'axios';
-
-
-var url = 'http://localhost:8080/customer/transaction'
-var tData;
-axios.get(url).then((res)=>{
-  tData = res.data;
-})
+import { getUserTransaction } from "../../services/userService";
 
 
 export default function Chart() {
   const theme = useTheme();
+  const [result, setResult] = useState();
+
+  useEffect(() => {
+    const id = sessionStorage.getItem("userid");
+    const token = sessionStorage.getItem("token");
+
+    const fetchData = async () => {
+      try {
+        const userData = await getUserTransaction(id, token);
+        setResult(userData);
+      } catch (error) {
+        console.error("Error fetching user profile:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <React.Fragment>
       <Title>Today</Title>
       <ResponsiveContainer>
         <LineChart
-          data={tData}
+          data={result}
           margin={{
             top: 16,
             right: 16,

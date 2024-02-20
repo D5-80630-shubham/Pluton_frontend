@@ -12,6 +12,8 @@ import {
   Button,
 } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
+import NavbarComponent from "../../components/navbar";
+import Footer from "../../components/footer";
 
 const theme = createTheme();
 
@@ -29,6 +31,8 @@ const typographySX = {
 const AdminProfile = () => {
   const [adminProfile, setAdminProfile] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const role = sessionStorage.getItem("role");
+ 
 
   useEffect(() => {
     const id = sessionStorage.getItem("userid");
@@ -47,6 +51,9 @@ const AdminProfile = () => {
 
     fetchData();
   }, []);
+  if(role=="ROLE_USER"){
+    return <div>You are not authorized to see this page</div>
+  }
 
   if (isLoading) {
     return <div>
@@ -59,6 +66,8 @@ const AdminProfile = () => {
   }
 
   return (
+    <>
+    <NavbarComponent/>
     <ThemeProvider theme={theme}>
     <CssBaseline />
 
@@ -217,6 +226,8 @@ const AdminProfile = () => {
       </Paper>
     </Container>
   </ThemeProvider>
+  <Footer/>
+  </>
   );
 };
 

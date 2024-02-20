@@ -1,7 +1,8 @@
 import React from "react";
-import NavbarComponent from "../components/navbar";
 import CarouselComponent from "../components/carousel";
 import "./home.css";
+import NavbarComponent from "../components/navbar";
+import Footer from "../components/footer";
 import img1 from "../assets/small_image/notes.jpg";
 import img2 from "../assets/small_image/digitalBankOnMobile.jpg";
 import img3 from "../assets/small_image/bankwithnotesandcoin.jpg";
@@ -12,7 +13,6 @@ import img7 from "../assets/small_image/shopingCart.jpg";
 import img8 from "../assets/small_image/wallet.jpg";
 import img9 from "../assets/small_image/messageIcon.jpg";
 
-import Footer from "../components/footer";
 
 function HomePage() {
   const divStyle = {
@@ -21,9 +21,7 @@ function HomePage() {
 
   return (
     <div>
-      <NavbarComponent />
-      <br></br>
-      <br></br>
+     <NavbarComponent/>
       <CarouselComponent />
       <div id="about" className="container home">
         <div>
@@ -167,7 +165,7 @@ function HomePage() {
           fugit in itaque quisquam deserunt voluptates incidunt a!
         </div>
       </div>
-      <Footer />
+      <Footer/>
     </div>
   );
 }

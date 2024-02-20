@@ -12,6 +12,8 @@ import {
   Button,
 } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
+import Footer from "../../components/footer";
+import NavbarComponent from "../../components/navbar";
 
 const theme = createTheme();
 
@@ -59,6 +61,8 @@ const UserProfile = () => {
   }
 
   return (
+    <>
+    <NavbarComponent/>
     <ThemeProvider theme={theme}>
     <CssBaseline />
 
@@ -196,7 +200,7 @@ const UserProfile = () => {
                   square
                   style={{...paperStyle}}
                 >
-                  {userProfile.gender}
+                  {userProfile.gender} 
                 </Paper>
               </div>
             </Paper>
@@ -217,6 +221,8 @@ const UserProfile = () => {
       </Paper>
     </Container>
   </ThemeProvider>
+  <Footer/>
+  </>
   );
 };
 

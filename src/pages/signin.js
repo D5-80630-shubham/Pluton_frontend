@@ -29,8 +29,6 @@ export function Signin() {
         sessionStorage.setItem("token", "Bearer " + jwt);
         sessionStorage.setItem("userid", user.customerId);
         sessionStorage.setItem("role", user.role);
-        console.log(user);
-
         toast.success("Successfully logged in");
 
         navigate("/");
