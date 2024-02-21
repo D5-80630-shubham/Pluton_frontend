@@ -78,9 +78,22 @@ const AllApplication = () => {
                 <td>{application.comments}</td>
                 <td>{application.applicationStatus}</td>
                 <td>
-                  <Link to={"/admin/accept"}>
-                    <button className="btn btn-info">Accept</button>
-                  </Link>
+                  {application.applicationStatus === "ACTIVE" && (
+                    <>
+                      <button className="btn btn-info" disabled>
+                        Accept
+                      </button>
+                    </>
+                  )}
+                  {!(application.applicationStatus === "ACTIVE") && (
+                    <>
+                      <Link
+                        to={"/admin/accept/" + application.loanApplicationId}
+                      >
+                        <button className="btn btn-info">Accept</button>
+                      </Link>
+                    </>
+                  )}
                 </td>
               </tr>
             ))}

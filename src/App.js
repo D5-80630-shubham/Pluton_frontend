@@ -13,7 +13,8 @@ import UserDashboard from "./users/pages/dashboardComponent/dashboard";
 import AdminDashboard from './admin/pages/dashboardComponent/dashboard';
 import MyAppl from "./users/pages/myAppl";
 import VerifyUser from "./users/pages/verifyUser";
-import AllApplication from "./admin/pages/sancltioned";
+import AllApplication from "./admin/pages/allApplications";
+import ApproveLoan from "./admin/pages/approveLoan";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/myapplication" element={<MyAppl/>}/>
         <Route path="/user/updateprofile" element={<VerifyUser/>}/>
         <Route path="/applications" element={<AllApplication/>}/>
+        <Route path="/admin/accept/:id" element={<ApproveLoan/>}/>
       </Routes>
       
       <ToastContainer/>

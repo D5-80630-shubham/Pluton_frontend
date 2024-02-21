@@ -5,7 +5,7 @@ export function createUrl(path){
 }
 
 export function createError(error){
-    return {ststus : 'error', error}
+    return {status : 'error', error}
 }
 
 
